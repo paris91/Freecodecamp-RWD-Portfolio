@@ -1,0 +1,263 @@
+/* Regular */
+@font-face {
+  font-family: 'aleo';
+  src: url('aleo-light-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nexa-Light';
+  src: url('Nexa-light.otf') format('opentype')
+}
+
+:root {
+  --navbar-color: #BE3144;
+  --welcome-panel-strcolor: #37393C;
+  --welcome-panel-endcolor: #1C1B1D;
+  --white-text-color: #F0F0F0;
+  --projects-panel-color: #45567D;
+  --footer-panel-color: #303841;
+}
+
+body {
+  margin: 0;
+  font-family: aleo;
+}
+
+.white-text {
+  color: var(--white-text-color, #F0F0F0);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-text-color, #F0F0F0);
+}
+/************************************************************
+*************************************************************
+                        NAVBAR
+*************************************************************
+************************************************************/
+nav {
+  background-color: var(--navbar-color, #BE3144);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  height: 12vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+nav a {
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: block;
+}
+
+nav li {
+  display: inline;
+  padding: 5px 20px 5px 20px;
+}
+
+/************************************************************
+*************************************************************
+                        Welcome Div
+*************************************************************
+************************************************************/
+#welcome-div {
+  background: linear-gradient(90deg, var(--welcome-panel-strcolor, #FFF), var(--welcome-panel-endcolor, #FFF));
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nexa-Light';
+}
+
+#welcome-div h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+#welcome-div p {
+  font-size: 2em;
+  color: var(--navbar-color, #BE3144);
+  font-weight: lighter;
+  margin: 0;
+  text-align: center;
+}
+
+/************************************************************
+*************************************************************
+                        Projects Div
+*************************************************************
+************************************************************/
+
+#projects-div {
+  background: var(--projects-panel-color, #45567D);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#projects-div h1 {
+  font-size: 2.5em;
+  text-align: center;
+  padding-top: 60px;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+}
+
+#projects-list {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  grid-gap: 20px;
+  padding-bottom: 20px;
+}
+
+.projects-tile {
+  width: 32vw;
+  height: 32vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-tile:hover {
+  animation-name: blow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+.projects-tile-iframe {
+  background-color: var(--white-text-color, #F0F0F0);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.projects-tile iframe {
+  width: 1280px;
+  height: 786px;
+  border: 0;
+
+  -ms-transform: scale(0.35);
+  -moz-transform: scale(0.35);
+  -o-transform: scale(0.35);
+  -webkit-transform: scale(0.35);
+  transform: scale(0.35);
+
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.projects-tile-caption {
+  background-color: var(--footer-panel-color, #303841);
+  width: 100%;
+  text-align: center;
+}
+
+/************************************************************
+*************************************************************
+                        Footer Div
+*************************************************************
+************************************************************/
+
+#footer-div {
+  background-color: var(--footer-panel-color, #303841);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#footer-title-div h1, p {
+  font-family: 'Nexa-Light';
+  text-align: center;
+  font-size: 1.1em;
+}
+
+#footer-title-div h1 {
+  padding: 50px 0 0 0;
+  font-size: 4em;
+  margin: 0;
+}
+
+#footer-contacts-caption {
+  margin: 5px 0 20px 0;
+}
+
+.fa-wht {
+  color: var(--white-text-color, #F0F0F0);
+  padding-right: 7px;
+}
+
+#footer-contacts-div {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 20px;
+}
+
+.footer-contacts-tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-contacts-div a {
+  display: block;
+  position: relative;
+}
+
+#footer-contacts-div a:hover {
+  animation-name: slidedown;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slidedown {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
